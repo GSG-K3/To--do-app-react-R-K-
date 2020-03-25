@@ -9,14 +9,28 @@ class App extends Component {
       { id: 2, task: 'cook ', checked: false }
     ]
   };
+   addItem = (item)=>{
+  //  console.log(item);
+  // bring old array and save it in variable 
+  const oldArray = this.state.items; 
+  // console.log(oldarray);
+  // [{id :  task :  checked:}]
+  const newItem =[{id: 3 ,task:item.newTask}]
+    //craete new a
+     const newArray =  oldArray.concat(newItem); 
+  //merge 
+  this.setState({items:newArray})
+   }
   render() {
     return (
       <div className="App">
-        <AddTodo />
+        <AddTodo addItem ={this.addItem} />
         <TodoList tasks={this.state.items} />
       </div>
     );
   }
 }
+
+
 
 export default App;
