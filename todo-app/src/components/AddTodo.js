@@ -24,7 +24,7 @@ class AddTodo extends Component {
       <div>
         <form className="container" onSubmit={this.handleSubmit}>
           <div>
-            <label className="input-label" for="task">
+            <label className="input-label" htmlFor="task">
               Task:
               <input
                 className="input-task"
@@ -35,7 +35,7 @@ class AddTodo extends Component {
                 value={this.state.newTask}
               />
             </label>
-            <label className="input-label" for="submit-btn">
+            <label className="input-label" htmlFor="submit-btn">
               Add
               <input
                 type="submit"
