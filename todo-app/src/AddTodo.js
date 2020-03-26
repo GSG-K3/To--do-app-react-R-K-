@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import  './App.css';
 class AddTodo extends Component {
   state = { newTask: '' };
 
@@ -18,14 +18,21 @@ class AddTodo extends Component {
     // console.log(this.props);
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
+         
+        <form  className="container" onSubmit={this.handleSubmit}>
+          
+        <img className="pic-todo" alt="Todo" src="logo2.jpg"/>
+        <div className="collect">
+        <h1 className=" title"> To-Do List</h1>
+       
+          <input className="input-task"
             type="Text"
             placeholder="Enter task"
             onChange={this.handleChange}
             value={this.state.newTask}
           />
-          <input type="submit" value="Add" />
+          <input type="submit" value="Add"  className="Add-btn" />
+          </div>
         </form>
       </div>
     );

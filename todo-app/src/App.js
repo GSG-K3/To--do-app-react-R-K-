@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
-
+import  './App.css';
 class App extends Component {
   state = {
     items:[
@@ -21,11 +21,16 @@ class App extends Component {
   //merge 
   this.setState({items:newArray})
    }
+   removeItem = (item)=>{
+   }
   render() {
     return (
+      
       <div className="App">
+        
         <AddTodo addItem ={this.addItem} />
         <TodoList tasks={this.state.items} />
+       
       </div>
     );
   }

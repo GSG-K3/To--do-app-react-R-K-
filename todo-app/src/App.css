@@ -1,3 +1,33 @@
+
+.input-task {
+  height: 15px;
+  width: 200px;
+  margin-bottom: 13px;
+}
+.collect{
+ 
+margin-left: 350px;
+}
+
+.container {
+  padding-top: 2px; 
+ display: flex;
+ 
+}
+.pic-todo {
+  height: 180px;
+  width: 150px;
+ justify-items: start;
+  display: flex;
+
+
+}
+
+.title {
+color: rgb(180, 143, 171);
+
+ 
+}
 .App {
   text-align: center;
 }
