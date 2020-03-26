@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList';
 import  './App.css';
 class App extends Component {
   state = {
     items: [
-      { id: 1, task: "wash dishes", checked: true },
-      { id: 2, task: "cook ", checked: false }
+      { id: Date.now(), task: "wash dishes", checked: true },
+      { id: Date.now()+1, task: "cook ", checked: false }
     ]
   };
 
@@ -14,12 +14,15 @@ class App extends Component {
     // bring old array and save it in variable
     const oldArray = this.state.items;
     // save new task object in an array
-    const newItem = [{ id: 3, task: item.newTask, checked: false }];
+    const newItem = [{ id:Date.now(), task: item.newTask, checked: false }];
     // concat the old array with the array which contains the new task object
     const newArray = oldArray.concat(newItem);
     // change the array on state to the new Array in order to display the new array on screen
     this.setState({ items: newArray });
   };
+  removeItem =()=> {
+
+  }
   render() {
     return (
       
