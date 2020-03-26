@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from "react";
+import "../App.css";
 class AddTodo extends Component {
-  state = { newTask: '' };
+  state = { newTask: "" };
 
-  handleChange = e => {
+  handleChange = (e) => {
     //whatever the user write in the input it will be saved in state
     const taskValue = e.target.value;
     this.setState({ newTask: taskValue });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault(); // to prevent form refresh
-    this.props.addItem(this.state); // send the new task to the app
-    this.setState({ newTask: '' }); // empty the input value after submit
+    if (this.state.newTask) {
+      this.setState({ newTask: this.state.newTask.trim() });
+      this.props.addItem(this.state); // send the new task to the app
+    } else {
+      alert("enter a task please!");
+    }
+    this.setState({ newTask: "" }); // empty the input value after submit
   };
   render() {
     return (
