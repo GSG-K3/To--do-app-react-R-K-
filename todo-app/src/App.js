@@ -20,15 +20,22 @@ class App extends Component {
     // change the array on state to the new Array in order to display the new array on screen
     this.setState({ items: newArray });
   };
-  removeItem =()=> {
+  removeItem =(id)=> {
+  console.log(id); 
+   const oldArray = this.state.items; 
+    const newArray = oldArray.filter((element)=> {
+      return element.id !== id ;
 
+
+    })
+    this.setState({items: newArray});
   }
   render() {
     return (
       
       <div className="App">
         <AddTodo addItem={this.addItem} />
-        <TodoList tasks={this.state.items} />
+        <TodoList tasks={this.state.items} remove ={this.removeItem} />
        
       </div>
     );
