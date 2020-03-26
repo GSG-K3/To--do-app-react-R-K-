@@ -23,18 +23,27 @@ class AddTodo extends Component {
     return (
       <div>
         <form className="container" onSubmit={this.handleSubmit}>
-          <img className="pic-todo" alt="Todo" src="logo2.jpg" />
-          <div className="collect">
-            <h1 className=" title"> To-Do List</h1>
-
-            <input
-              className="input-task"
-              type="Text"
-              placeholder="Enter task"
-              onChange={this.handleChange}
-              value={this.state.newTask}
-            />
-            <input type="submit" value="Add" className="Add-btn" />
+          <div>
+            <label className="input-label" for="task">
+              Task:
+              <input
+                className="input-task"
+                type="Text"
+                placeholder="Enter task"
+                name="task"
+                onChange={this.handleChange}
+                value={this.state.newTask}
+              />
+            </label>
+            <label className="input-label" for="submit-btn">
+              Add
+              <input
+                type="submit"
+                value="Add"
+                name="submit-btn"
+                className="add-btn"
+              />
+            </label>
           </div>
         </form>
       </div>
